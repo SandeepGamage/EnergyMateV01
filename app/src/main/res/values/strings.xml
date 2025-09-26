@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">EnergyMate</string>
+
+    <string name="get_started">GET STARTED</string>
+
+    <string name="welcometo">Welcome to EnergyMate</string>
+    <string name="your_personal_guide_to">Your personal guide to a healthier and happier you. Track your habits, journal your moods, and stay hydrated.</string>
+    <string name="next">NEXT</string>
+
+    <string name="login">LOGIN</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="submit">SUBMIT</string>
+    <string name="Register_Here">Register Here</string>
+    <string name="dont_have_account">Don\'t Have an Account?</string>
+    <string name="or">OR Continue With</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="app_copyright">© 2025 EnergyMate. All Rights Reserved</string>
+
+    <string name="enter_your_password">Enter Your Password</string>
+    <string name="reenter_your_password">Re-Enter Your Password</string>
+    <string name="enter_your_email">Enter Your EMail</string>
+    <string name="login_here">Login Here</string>
+    <string name="already_have_account">Already Registered?</string>
+    <string name="enter_your_name">Enter Your Name</string>
+    <string name="enter_your_location">Enter Your Address</string>
+    <string name="enter_mobile_number">Enter Your Mobile Number</string>
+    <string name="i_agreed">I Agree With All Terms And Conditions</string>
+    <string name="signup">SIGNUP</string>
+    <string name="registration_note">Create Your EnergyMate Account\nSet up your profile to unlock personalized habit tracking, mood journaling, and smart hydration reminders. Your path to better wellness begins here.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

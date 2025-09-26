@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_orange"
+    android:orientation="vertical"
+    tools:context=".NavBar">
+
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorOnPrimary" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_orange"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="20dp">
+
+        <ImageView
+            android:id="@+id/homeIcon"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:contentDescription="Home"
+            android:padding="8dp"
+            app:srcCompat="@drawable/baseline_home_24"
+            app:tint="@android:color/darker_gray" />
+
+        <ImageView
+            android:id="@+id/moodIcon"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:contentDescription="Mood Journal"
+            android:padding="8dp"
+            app:srcCompat="@drawable/baseline_emoji_emotions_24"
+            app:tint="@android:color/darker_gray" />
+
+        <ImageView
+            android:id="@+id/waterDropIcon"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:contentDescription="Hydration"
+            android:padding="8dp"
+            app:srcCompat="@drawable/baseline_water_drop_24"
+            app:tint="@android:color/darker_gray" />
+
+        <ImageView
+            android:id="@+id/profileIcon"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:contentDescription="Profile"
+            android:padding="8dp"
+            app:srcCompat="@drawable/baseline_person_24"
+            app:tint="@android:color/darker_gray" />
+    </LinearLayout>
+</LinearLayout>
