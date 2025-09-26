@@ -1,5 +1,6 @@
 package com.example.energymatev01
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,10 @@ import androidx.fragment.app.Fragment
 
 class HomeFragment : Fragment() {
 
+    lateinit var sharedPreferences: SharedPreferences
+    lateinit var userName: TextView
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -17,13 +22,16 @@ class HomeFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Make sure the text is visible
-        val textView = view.findViewById<TextView>(R.id.textView13)
-        textView.text = "Welcome Home!"
-        textView.setTextColor(resources.getColor(android.R.color.black))
-        textView.textSize = 24f
+        sharedPreferences = requireActivity().getSharedPreferences("user_data", 0)
+
+        userName = view.findViewById(R.id.usernameText)
+
+        val storedUserName = sharedPreferences.getString("name", "")
+        userName.text = storedUserName?.uppercase()
+
     }
 }

@@ -29,6 +29,8 @@
     <string name="registration_note">Create Your EnergyMate Account\nSet up your profile to unlock personalized habit tracking, mood journaling, and smart hydration reminders. Your path to better wellness begins here.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile">Profile</string>
+    <string name="hello">Hello Buddy 👋</string>
 
 
 </resources>
