@@ -31,6 +31,15 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="profile">Profile</string>
     <string name="hello">Hello Buddy 👋</string>
+    <string name="how_are_you">How Are You Feeling Today?</string>
+    <string name="excellent">Excellent</string>
+    <string name="good">Good</string>
+    <string name="okay">Okay</string>
+    <string name="not_great">Not Great</string>
+    <string name="bad">Bad</string>
+    <string name="add_a_note">Add a Note (optional)</string>
+    <string name="recent">⏳Recent Entries</string>
+    <string name="mood_journal">Mood Journal</string>
 
 
 </resources>

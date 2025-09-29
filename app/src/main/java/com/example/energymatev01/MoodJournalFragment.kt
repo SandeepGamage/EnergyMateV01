@@ -5,17 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MoodJournalFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MoodJournalFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -36,6 +31,45 @@ class MoodJournalFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_mood_journal, container, false)
     }
+
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//
+//        val excellentMood = view.findViewById<Button>(R.id.excellentMood)
+//        val goodMood = view.findViewById<Button>(R.id.goodMood)
+//        val okayMood = view.findViewById<Button>(R.id.okayMood)
+//        val notGreatMood = view.findViewById<Button>(R.id.notGreatMood)
+//        val badMood = view.findViewById<Button>(R.id.badMood)
+//        lateinit var userMood : String
+//
+//        excellentMood.setOnClickListener {
+//            userMood = "Excellent"
+//        }
+//
+//        goodMood.setOnClickListener {
+//            userMood = "Good"
+//        }
+//
+//        okayMood.setOnClickListener {
+//            userMood = "Okay"
+//        }
+//
+//        notGreatMood.setOnClickListener {
+//            userMood = "Not Great"
+//        }
+//
+//        badMood.setOnClickListener {
+//            userMood = "Bad"
+//        }
+//
+//        val saveLogBTN : Button = view.findViewById(R.id.saveLogBTN)
+//
+//        saveLogBTN.setOnClickListener {
+//            val noteContainer : EditText = view.findViewById(R.id.noteContainer)
+//            val userNote = noteContainer.text.toString()
+//        }
+//
+//    }
 
     companion object {
         /**

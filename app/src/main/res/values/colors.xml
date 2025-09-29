@@ -3,6 +3,8 @@
 <!--    <color name="black">#FF000000</color>-->
 <!--    <color name="white">#FFFFFFFF</color>-->
     <color name="red">#FF0000</color>
+    <color name="green">#4CAF50</color>
+    <color name="yellow">#FFC107</color>
     <color name="orange">#f27f0d</color>
     <color name="light_orange">#f8f7f5</color>
 
@@ -23,6 +25,7 @@
 
         <!-- Accent Colors (10% usage) -->
         <color name="black">#000000</color>
+        <color name="secondory_black">#65000000</color>
         <color name="dark_gray">#333333</color>
 
         <!-- System Colors -->

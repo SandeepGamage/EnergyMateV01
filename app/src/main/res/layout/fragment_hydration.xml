@@ -11,7 +11,6 @@
         android:orientation="vertical"
         android:padding="24dp">
 
-        <!-- --- HYDRATION TRACKER --- -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -21,35 +20,37 @@
                 android:id="@+id/titleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:text="Hydration Tracker"
+                android:textColor="@color/black"
                 android:textSize="32sp"
                 android:textStyle="bold"
-                android:textColor="@color/black"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <!-- Settings icon -->
             <ImageButton
                 android:id="@+id/settingsBtn"
                 android:layout_width="44dp"
                 android:layout_height="44dp"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/round_space_with_border"
-                android:src="@drawable/baseline_settings_24"
                 android:contentDescription="Settings"
-                app:tint="@color/orange"
+                android:src="@drawable/baseline_settings_24"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/orange" />
 
             <!-- Reminders row -->
             <ImageView
                 android:id="@+id/reminderIcon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/be"
-                app:tint="@color/orange"
-                app:layout_constraintTop_toBottomOf="@id/titleText"
+                android:layout_width="41dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/baseline_notifications_24"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="32dp" />
+                app:layout_constraintTop_toBottomOf="@id/titleText"
+                app:tint="@color/orange" />
 
             <LinearLayout
                 android:id="@+id/reminderGroup"
@@ -102,53 +103,56 @@
             <!-- Water Drop with % -->
             <ImageView
                 android:id="@+id/waterDrop"
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:src="@drawable/baseline_water_drop_24"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="25dp"
                 android:background="@drawable/round_space"
                 android:contentDescription="Progress Drop"
-                android:padding="6dp"
-                app:tint="@color/orange"
-                app:layout_constraintTop_toBottomOf="@id/waterIntakeTitle"
+                android:padding="0dp"
+                android:src="@drawable/baseline_water_drop_24"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="18dp"/>
+                app:layout_constraintTop_toBottomOf="@id/waterIntakeTitle"
+                app:tint="@color/orange" />
 
             <TextView
                 android:id="@+id/waterPercent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="0%"
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="@id/waterDrop"
                 app:layout_constraintBottom_toBottomOf="@id/waterDrop"
-                app:layout_constraintStart_toStartOf="@id/waterDrop"
                 app:layout_constraintEnd_toEndOf="@id/waterDrop"
-                android:gravity="center"/>
+                app:layout_constraintStart_toStartOf="@id/waterDrop"
+                app:layout_constraintTop_toTopOf="@id/waterDrop" />
 
             <TextView
                 android:id="@+id/waterTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
                 android:text="0 / 7 glasses"
                 android:textColor="@color/black"
-                android:textStyle="bold"
                 android:textSize="30sp"
-                app:layout_constraintTop_toTopOf="@id/waterDrop"
+                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/waterDrop"
-                android:layout_marginStart="12dp"/>
+                app:layout_constraintTop_toTopOf="@id/waterDrop" />
 
             <TextView
                 android:id="@+id/glassesLeft"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="6dp"
                 android:text="7 more to go"
                 android:textColor="@color/dark_gray"
                 android:textSize="18sp"
-                app:layout_constraintTop_toBottomOf="@id/waterTotal"
                 app:layout_constraintStart_toEndOf="@id/waterDrop"
-                android:layout_marginStart="12dp"/>
+                app:layout_constraintTop_toBottomOf="@id/waterTotal" />
 
             <!-- Progress Bar -->
             <View
@@ -166,62 +170,67 @@
                 android:id="@+id/minusBtn"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="24dp"
                 android:background="@drawable/round_space_with_border"
-                android:src="@drawable/baseline_minimize_24"
                 android:contentDescription="Minus"
+                android:paddingBottom="10dp"
+                android:src="@drawable/baseline_minimize_24"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/progressBar"
-                android:layout_marginTop="24dp"/>
+                app:layout_constraintTop_toBottomOf="@id/progressBar" />
 
             <Button
                 android:id="@+id/addGlassBtn"
-                android:layout_width="0dp"
+                android:layout_width="200dp"
                 android:layout_height="60dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp"
                 android:backgroundTint="@color/orange"
-                android:text="Add Glass"
+                android:text="+ Add Glass"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:layout_marginStart="18dp"
-                android:layout_marginEnd="18dp"
-                app:layout_constraintStart_toEndOf="@id/minusBtn"
                 app:layout_constraintEnd_toStartOf="@id/resetBtn"
-                app:layout_constraintTop_toTopOf="@id/minusBtn"/>
+                app:layout_constraintStart_toEndOf="@id/minusBtn"
+                app:layout_constraintTop_toTopOf="@id/minusBtn" />
 
             <ImageButton
                 android:id="@+id/resetBtn"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
+                android:layout_marginEnd="30dp"
                 android:background="@drawable/round_space_with_border"
-                android:src="@drawable/baseline_refresh_24"
                 android:contentDescription="Reset"
-                app:layout_constraintTop_toTopOf="@id/minusBtn"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                android:src="@drawable/baseline_refresh_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/minusBtn" />
 
             <!-- Daily Goal -->
             <TextView
                 android:id="@+id/dailyGoalTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:text="Daily Goal"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:layout_marginTop="22dp"
-                app:layout_constraintTop_toBottomOf="@id/addGlassBtn"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@id/addGlassBtn" />
 
             <ImageButton
                 android:id="@+id/dailyMinusBtn"
                 android:layout_width="42dp"
                 android:layout_height="42dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/round_space_with_border"
-                android:src="@drawable/baseline_minimize_24"
                 android:contentDescription="Minus"
-                app:layout_constraintTop_toBottomOf="@id/dailyGoalTitle"
+                android:paddingBottom="10dp"
+                android:src="@drawable/baseline_minimize_24"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="6dp"/>
+                app:layout_constraintTop_toBottomOf="@id/dailyGoalTitle" />
 
             <TextView
                 android:id="@+id/dailyGlassGoal"
@@ -241,11 +250,12 @@
                 android:id="@+id/dailyPlusBtn"
                 android:layout_width="42dp"
                 android:layout_height="42dp"
+                android:layout_marginEnd="80dp"
                 android:background="@drawable/round_space_with_border"
-                android:src="@drawable/baseline_add_24"
                 android:contentDescription="Plus"
-                app:layout_constraintTop_toTopOf="@id/dailyMinusBtn"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                android:src="@drawable/baseline_add_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/dailyMinusBtn" />
 
             <!-- Glasses Icons -->
             <LinearLayout
@@ -257,17 +267,17 @@
                 android:layout_marginTop="16dp"
                 app:layout_constraintTop_toBottomOf="@id/dailyMinusBtn">
 
-                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_drop" app:tint="@color/light_gray" android:layout_marginEnd="9dp"/>
-                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_drop" app:tint="@color/light_gray" android:layout_marginEnd="9dp"/>
-                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_drop" app:tint="@color/light_gray" android:layout_marginEnd="9dp"/>
-                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_drop" app:tint="@color/light_gray" android:layout_marginEnd="9dp"/>
-                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_drop" app:tint="@color/light_gray" android:layout_marginEnd="9dp"/>
-                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_drop" app:tint="@color/light_gray" android:layout_marginEnd="9dp"/>
-                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_drop" app:tint="@color/light_gray"/>
+<!--                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_drop" app:tint="@color/light_gray" android:layout_marginEnd="9dp"/>-->
+<!--                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_drop" app:tint="@color/light_gray" android:layout_marginEnd="9dp"/>-->
+<!--                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_drop" app:tint="@color/light_gray" android:layout_marginEnd="9dp"/>-->
+<!--                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_drop" app:tint="@color/light_gray" android:layout_marginEnd="9dp"/>-->
+<!--                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_drop" app:tint="@color/light_gray" android:layout_marginEnd="9dp"/>-->
+<!--                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_drop" app:tint="@color/light_gray" android:layout_marginEnd="9dp"/>-->
+<!--                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_drop" app:tint="@color/light_gray"/>-->
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- --- HYDRATION TIPS --- -->
+        <!-- TIPS - -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -282,40 +292,163 @@
             android:layout_marginTop="14dp"
             android:orientation="vertical">
             <!-- Tip 1 -->
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="20dp">
-                <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/baseline_lightbulb_24" app:tint="@color/orange"/>
-                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="12dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Start Your Day Right" android:textStyle="bold" android:textColor="@color/black" android:textSize="17sp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Drink a glass of water as soon as you wake up to kickstart your metabolism." android:textColor="@color/gray" android:textSize="15sp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_box"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/baseline_lightbulb_24"
+                    app:tint="@color/orange" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Start Your Day Right"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Drink a glass of water as soon as you wake up to kickstart your metabolism."
+                        android:textColor="@color/secondory_black"
+                        android:textSize="15sp" />
                 </LinearLayout>
             </LinearLayout>
             <!-- Tip 2 -->
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="20dp">
-                <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/ic_heart_beat" app:tint="@color/orange"/>
-                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="12dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="During Exercise" android:textStyle="bold" android:textColor="@color/black" android:textSize="17sp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Drink water before, during, and after physical activity to stay hydrated." android:textColor="@color/gray" android:textSize="15sp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_box"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/baseline_health_and_safety_24"
+                    app:tint="@color/orange" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="During Exercise"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Drink water before, during, and after physical activity to stay hydrated."
+                        android:textColor="@color/secondory_black"
+                        android:textSize="15sp" />
                 </LinearLayout>
             </LinearLayout>
             <!-- Tip 3 -->
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="20dp">
-                <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/ic_fork_knife" app:tint="@color/orange"/>
-                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="12dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="With Meals" android:textStyle="bold" android:textColor="@color/black" android:textSize="17sp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sip water throughout your meal to aid digestion and feel more satisfied." android:textColor="@color/gray" android:textSize="15sp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_box"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/baseline_fastfood_24"
+                    app:tint="@color/orange" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="With Meals"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sip water throughout your meal to aid digestion and feel more satisfied."
+                        android:textColor="@color/secondory_black"
+                        android:textSize="15sp" />
                 </LinearLayout>
             </LinearLayout>
             <!-- Tip 4 -->
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/ic_bed" app:tint="@color/orange"/>
-                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="12dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Before Bed" android:textStyle="bold" android:textColor="@color/black" android:textSize="17sp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Have a small glass of water before sleep, but not too much to avoid interruptions." android:textColor="@color/gray" android:textSize="15sp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_box"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/baseline_bedtime_24"
+                    app:tint="@color/orange" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Before Bed"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Have a small glass of water before sleep, but not too much to avoid interruptions."
+                        android:textColor="@color/secondory_black"
+                        android:textSize="15sp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
-        <!-- --- BENEFITS --- -->
+        <!--  BENEFITS - -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -334,17 +467,59 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginBottom="18dp">
+                android:orientation="horizontal">
 
-                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
-                    <ImageView android:layout_width="36dp" android:layout_height="36dp" android:src="@drawable/ic_heart" app:tint="@color/green"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Better Heart Health" android:textColor="@color/black" android:textSize="16sp" android:gravity="center"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_box"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/baseline_monitor_heart_24"
+                        app:tint="@color/habit_completed" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Better Heart Health"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
                 </LinearLayout>
-                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
-                    <ImageView android:layout_width="36dp" android:layout_height="36dp" android:src="@drawable/ic_lightning" app:tint="@color/orange"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="More Energy" android:textColor="@color/black" android:textSize="16sp" android:gravity="center"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="5dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_box"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/baseline_bolt_24"
+                        app:tint="@color/habit_pending" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="More Energy"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
@@ -352,13 +527,59 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center">
-                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
-                    <ImageView android:layout_width="36dp" android:layout_height="36dp" android:src="@drawable/ic_smile" app:tint="@color/orange"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Clearer Skin" android:textColor="@color/black" android:textSize="16sp" android:gravity="center"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_box"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/baseline_tag_faces_24"
+                        app:tint="@color/orange" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Clearer Skin"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
                 </LinearLayout>
-                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
-                    <ImageView android:layout_width="36dp" android:layout_height="36dp" android:src="@drawable/ic_chart" app:tint="@color/orange"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Better Focus" android:textColor="@color/black" android:textSize="16sp" android:gravity="center"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="5dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_box"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/baseline_filter_center_focus_24"
+                        app:tint="@color/blue" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Better Focus"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
