@@ -9,12 +9,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.energymatev01.data.UserPreferences
 import com.example.energymatev01.databinding.ActivityRegisterPageBinding
 
 class register_page : AppCompatActivity() {
 
     private lateinit var viewLogin: TextView
-    private lateinit var sharedPreferences: SharedPreferences
     private lateinit var registerSubmit: Button
     private lateinit var emailInput: EditText
     private lateinit var nameInput: EditText
@@ -56,10 +56,13 @@ class register_page : AppCompatActivity() {
             // Clear previous errors
             clearErrors()
 
-            // Validate all fields
             if (validateInputs(email, name, password, repassword, address, mobileNumber)) {
-                // All fields are valid, proceed with registration
-                performRegistration(email, name, password, address, mobileNumber)
+                val userPreferences = UserPreferences(this)
+                userPreferences.saveUser(email, name, password, address, mobileNumber)
+                Toast.makeText(this, "Registration successful!", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, login_page::class.java)
+                startActivity(intent)
+                finish()
             }
         }
     }
@@ -142,30 +145,30 @@ class register_page : AppCompatActivity() {
         return mobileNumber.matches(mobilePattern.toRegex())
     }
 
-    private fun performRegistration(
-        email: String,
-        name: String,
-        password: String,
-        address: String,
-        mobileNumber: String
-    ) {
-        // TODO: Implement your registration logic here
-
-        sharedPreferences = getSharedPreferences("user_data", MODE_PRIVATE)
-
-        val editor = sharedPreferences.edit()
-        editor.putString("email", email)
-        editor.putString("name", name)
-        editor.putString("password", password)
-        editor.putString("address", address)
-        editor.putString("mobileNumber", mobileNumber)
-        editor.apply()
-
-        Toast.makeText(this, "Registration successful!", Toast.LENGTH_SHORT).show()
-
-        // Example: Navigate to login page after successful registration
-         val intent = Intent(this, login_page::class.java)
-         startActivity(intent)
-         finish()
-    }
+//    private fun performRegistration(
+//        email: String,
+//        name: String,
+//        password: String,
+//        address: String,
+//        mobileNumber: String
+//    ) {
+//        // TODO: Implement your registration logic here
+//
+//        sharedPreferences = getSharedPreferences("user_data", MODE_PRIVATE)
+//
+//        val editor = sharedPreferences.edit()
+//        editor.putString("email", email)
+//        editor.putString("name", name)
+//        editor.putString("password", password)
+//        editor.putString("address", address)
+//        editor.putString("mobileNumber", mobileNumber)
+//        editor.apply()
+//
+//        Toast.makeText(this, "Registration successful!", Toast.LENGTH_SHORT).show()
+//
+//        // Example: Navigate to login page after successful registration
+//         val intent = Intent(this, login_page::class.java)
+//         startActivity(intent)
+//         finish()
+//    }
 }

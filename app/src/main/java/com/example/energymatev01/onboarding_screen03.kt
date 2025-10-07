@@ -1,6 +1,8 @@
 package com.example.energymatev01
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -11,10 +13,13 @@ class onboarding_screen03 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_onboarding_screen03)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        val nextBTN : Button = findViewById(R.id.nextBTN2)
+
+        nextBTN.setOnClickListener {
+            val intent = Intent(this, login_page::class.java)
+            startActivity(intent)
         }
+
     }
 }

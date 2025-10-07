@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <!-- for give permission to notification -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
@@ -11,6 +13,18 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.EnergyMateV01">
+        <activity
+            android:name=".ChangePassword"
+            android:exported="false" />
+        <activity
+            android:name=".PrivacyPolicyPage"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileSettings"
+            android:exported="false" />
+        <activity
+            android:name=".HydrationReminderSettings"
+            android:exported="false" />
         <activity
             android:name=".NavBar"
             android:exported="false" />
@@ -44,7 +58,11 @@
 
         <meta-data
             android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+            android:resource="@array/preloaded_fonts" /> <!-- BroadcastReceiver for hydration reminders -->
+        <receiver
+            android:name=".HydrationReminderReceiver"
+            android:enabled="true"
+            android:exported="false" />
     </application>
 
 </manifest>

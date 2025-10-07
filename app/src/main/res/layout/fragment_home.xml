@@ -68,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:fontFamily="@font/koho"
-                    android:text="Friday, September 26"
+                    android:text="@string/friday_september_26"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -89,10 +89,11 @@
                         android:layout_height="match_parent" />
 
                     <TextView
+                        android:id="@+id/circularProgressPercent"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="0%"
+                        android:text="@string/_0"
                         android:textColor="@color/hm_orange"
                         android:textSize="30sp"
                         android:textStyle="bold" />
@@ -107,7 +108,7 @@
                     android:gravity="center"
                     android:paddingTop="8dp"
                     android:paddingBottom="12dp"
-                    android:text="Complete"
+                    android:text="@string/complete"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -144,9 +145,10 @@
                     android:padding="10dp">
 
                     <TextView
+                        android:id="@+id/activeHabitsCount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="1"
+                        android:text="@string/_0_"
                         android:textColor="@color/orange"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -154,7 +156,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Active Habits"
+                        android:text="@string/active_habitss"
                         android:textColor="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -175,9 +177,10 @@
                     android:padding="10dp">
 
                     <TextView
+                        android:id="@+id/dailyGoalsCount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="1"
+                        android:text="0"
                         android:textColor="@color/orange"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -185,7 +188,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Daily Goals"
+                        android:text="@string/mood_logs"
                         android:textColor="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -206,9 +209,10 @@
                     android:padding="10dp">
 
                     <TextView
+                        android:id="@+id/waterIntakeCount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="1"
+                        android:text="0"
                         android:textColor="@color/orange"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -216,10 +220,71 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Week Streak"
+                        android:text="@string/water_intakes"
                         android:textColor="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>
+            </LinearLayout>
+
+            <!-- Energy & Mood Analytics Section -->
+            <LinearLayout
+                android:id="@+id/analyticsSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round_box_with_border"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintTop_toBottomOf="@id/statsRow">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/weekly_mood_analytics"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- MPAndroidChart LineChart for Energy/Mood Trends -->
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/MoodChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Chart Legend/Info -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginEnd="16dp">
+
+                        <View
+                            android:layout_width="12dp"
+                            android:layout_height="3dp"
+                            android:background="@color/primary_orange"
+                            android:layout_marginEnd="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mood_score"
+                            android:textSize="12sp"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <!-- Habits completion legend removed: chart now displays mood scores only -->
+                </LinearLayout>
+
             </LinearLayout>
 
             <!-- Today's Habits Header and Add Button -->
@@ -231,80 +296,37 @@
                 android:gravity="center_vertical"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp"
-                app:layout_constraintTop_toBottomOf="@id/statsRow">
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/analyticsSection">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Today's Habits"
+                    android:text="@string/today_s_habits"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:textSize="20sp" />
 
                 <ImageButton
+                    android:id="@+id/addHabitBtn"
                     android:layout_width="55dp"
                     android:layout_height="55dp"
                     android:background="@drawable/round_space"
                     android:src="@drawable/baseline_add_circle_outline_24"
-                    android:contentDescription="Add Habit" />
+                    android:contentDescription="@string/add_habit" />
             </LinearLayout>
 
             <!-- Habits Card -->
-            <LinearLayout
-                android:id="@+id/habitsCard"
-                android:layout_width="384dp"
-                android:layout_height="80dp"
-                android:layout_marginTop="28dp"
-                android:background="@drawable/rounded_box"
-                android:elevation="6dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/habitsRecycler"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintTop_toBottomOf="@id/todaysHabitsHeader"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/todaysHabitsHeader">
-
-                <ImageView
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:background="@drawable/rounded_box"
-                    android:contentDescription="Habit Icon"
-                    android:padding="6dp"
-                    android:src="@drawable/baseline_water_drop_24"
-                    app:tint="@color/primary_orange" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="8dp">
-
-                    <TextView
-                        android:id="@+id/habitName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="ghhgf"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/habitTarget"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Target: 7 days/week"
-                        android:textColor="@color/black"
-                        android:textSize="15sp" />
-                </LinearLayout>
-
-                <CheckBox
-                    android:id="@+id/checkBox2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
+                app:layout_constraintEnd_toEndOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

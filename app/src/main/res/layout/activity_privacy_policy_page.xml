@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_orange"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="24dp">
+
+            <ImageButton
+                android:id="@+id/privacyPolicyBackBTN"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/round_space_with_border"
+                android:contentDescription="@string/settings"
+                android:src="@drawable/baseline_keyboard_double_arrow_left_24"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/koho_bold"
+                android:text="@string/privacy_policy"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <!-- Empty view for balance -->
+            <View
+                android:layout_width="48dp"
+                android:layout_height="48dp" />
+        </LinearLayout>
+
+        <!-- Last Updated -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/koho"
+            android:text="@string/last_updated_december_2024"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Privacy Policy Content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_box"
+            android:padding="24dp">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/logo"
+                android:layout_marginLeft="130dp"/>
+
+            <!-- Introduction -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho_bold"
+                android:text="@string/energymate_privacy"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho"
+                android:text="@string/energymate_we_values"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:lineSpacingExtra="4sp"
+            android:layout_marginBottom="24dp" />
+
+            <!-- Information We Collect -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho_bold"
+                android:text="@string/_1_information_we_collect"
+                android:textColor="@color/orange"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho_semibold"
+                android:text="@string/personal_information"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho"
+                android:text="@string/when_you_sign_up"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:lineSpacingExtra="4sp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho_semibold"
+                android:text="@string/health_and_wellness_data"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho"
+                android:text="@string/to_provide_personalized"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:lineSpacingExtra="4sp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho_semibold"
+                android:text="@string/usage_data"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho"
+                android:text="@string/we_collect_data"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:lineSpacingExtra="4sp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- How We Use Your Information -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho_bold"
+                android:text="@string/_2_how_we_use_your_information"
+                android:textColor="@color/orange"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho"
+                android:text="@string/to_provide_and_improve"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:lineSpacingExtra="6sp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Information Sharing -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho_bold"
+                android:text="@string/_3_information_sharing_and_disclosure"
+                android:textColor="@color/orange"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho"
+                android:text="@string/we_do_not_sell_or_rent"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:lineSpacingExtra="4sp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Data Security -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho_bold"
+                android:text="@string/_4_data_security"
+                android:textColor="@color/orange"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho"
+                android:text="@string/we_implement_reasonable"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:lineSpacingExtra="4sp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Your Rights -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho_bold"
+                android:text="@string/_5_your_rights_and_choices"
+                android:textColor="@color/orange"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho"
+                android:text="@string/you_can_review_update"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:lineSpacingExtra="6sp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Children's Privacy -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho_bold"
+                android:text="@string/_6_children_s_privacy"
+                android:textColor="@color/orange"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho"
+                android:text="@string/energymate_is_not"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:lineSpacingExtra="4sp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Changes to Policy -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho_bold"
+                android:text="@string/_7_changes_to_this_policy"
+                android:textColor="@color/orange"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho"
+                android:text="@string/we_may_update_this"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:lineSpacingExtra="4sp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Contact Us -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho_bold"
+                android:text="@string/_8_contact_us"
+                android:textColor="@color/orange"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho"
+                android:text="@string/if_you_have_questions"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:lineSpacingExtra="4sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho_semibold"
+                android:text="@string/email_support_energymate_com"
+                android:textColor="@color/orange"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/koho"
+                android:text="@string/we_typically_respond_within_24_48_hours"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
+
+        </LinearLayout>
+
+        <!-- Footer Note -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/koho"
+            android:text="@string/thank_you_for"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginTop="24dp"
+            android:padding="16dp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -7,36 +7,37 @@
     <color name="yellow">#FFC107</color>
     <color name="orange">#f27f0d</color>
     <color name="light_orange">#f8f7f5</color>
+    <color name="light_green">#804CAF50</color>
 
-        <color name="hm_orange">#FF7A1A</color>
-        <color name="hm_white">#FFFFFFFF</color>
-        <color name="hm_black">#FF000000</color>
+    <color name="hm_orange">#FF7A1A</color>
+    <color name="hm_white">#FFFFFFFF</color>
+    <color name="hm_black">#FF000000</color>
     <color name="blue">#2196F3</color>
 
 
         <!-- Primary Colors (60% usage) -->
-        <color name="white">#FFFFFF</color>
-        <color name="light_gray">#F5F5F5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="light_gray">#F5F5F5</color>
 
         <!-- Secondary Colors (30% usage) -->
-        <color name="primary_orange">#FF6B35</color>
+    <color name="primary_orange">#FF6B35</color>
 <!--        <color name="light_orange">#FFB299</color>-->
-        <color name="dark_orange">#E55100</color>
+    <color name="dark_orange">#E55100</color>
 
         <!-- Accent Colors (10% usage) -->
-        <color name="black">#000000</color>
-        <color name="secondory_black">#65000000</color>
-        <color name="dark_gray">#333333</color>
+    <color name="black">#000000</color>
+    <color name="secondory_black">#65000000</color>
+    <color name="dark_gray">#333333</color>
 
         <!-- System Colors -->
-        <color name="colorPrimary">@color/primary_orange</color>
-        <color name="colorPrimaryVariant">@color/dark_orange</color>
-        <color name="colorOnPrimary">@color/white</color>
-        <color name="colorSecondary">@color/light_orange</color>
+    <color name="colorPrimary">@color/primary_orange</color>
+    <color name="colorPrimaryVariant">@color/dark_orange</color>
+    <color name="colorOnPrimary">@color/white</color>
+    <color name="colorSecondary">@color/light_orange</color>
 
         <!-- Habit Tracker Colors -->
-        <color name="habit_completed">#4CAF50</color>
-        <color name="habit_pending">#FFC107</color>
+    <color name="habit_completed">#4CAF50</color>
+    <color name="habit_pending">#FFC107</color>
 
 
 

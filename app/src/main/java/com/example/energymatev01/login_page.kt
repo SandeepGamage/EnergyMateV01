@@ -1,7 +1,6 @@
 package com.example.energymatev01
 
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -9,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.energymatev01.data.UserPreferences
 
 class login_page : AppCompatActivity() {
 
@@ -22,21 +22,17 @@ class login_page : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_login_page)
 
-        // Initialize all views
         viewRegister = findViewById(R.id.register)
         email = findViewById(R.id.emailInput)
         password = findViewById(R.id.passwordInput)
         submit = findViewById(R.id.loginSubmit)
 
-        // Set click listener for register text
         viewRegister.setOnClickListener {
             val intent = Intent(this, register_page::class.java)
             startActivity(intent)
         }
 
-        // Set click listener for login button
         submit.setOnClickListener {
-            // Get current values from input fields when button is clicked
             val emailInput = email.text.toString().trim()
             val passwordInput = password.text.toString().trim()
 
@@ -66,19 +62,14 @@ class login_page : AppCompatActivity() {
             return
         }
 
-        // Get saved user data from SharedPreferences
-        val sharedPreferences = getSharedPreferences("user_data", MODE_PRIVATE)
-        val savedEmail = sharedPreferences.getString("email", "")
-        val savedPassword = sharedPreferences.getString("password", "")
+        val userPreferences = UserPreferences(this)
+        val savedEmail = userPreferences.getEmail()
+        val savedPassword = userPreferences.getPassword()
 
-        // Check if credentials match
         if (emailInput == savedEmail && passwordInput == savedPassword) {
             Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
 
-            // Save login status
-            val editor = sharedPreferences.edit()
-            editor.putBoolean("isLoggedIn", true)
-            editor.apply()
+            userPreferences.setLoggedIn(true)
 
             // Navigate to main activity
             val intent = Intent(this, NavBar::class.java)
@@ -96,8 +87,6 @@ class login_page : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-
-        // Optional: Check if user is already logged in
         val sharedPreferences = getSharedPreferences("user_data", MODE_PRIVATE)
         val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
 

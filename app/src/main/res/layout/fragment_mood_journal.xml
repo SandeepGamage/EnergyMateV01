@@ -237,10 +237,9 @@
             android:layout_width="0dp"
             android:layout_height="120dp"
             android:layout_marginTop="12dp"
-            android:background="@drawable/rounded_edittext_bg"
-            android:backgroundTint="@color/colorOnPrimary"
+            android:background="@drawable/round_box_with_border"
             android:gravity="top|start"
-            android:hint="What's on your mind today?"
+            android:hint="@string/what_s_on_your_mind_today"
             android:inputType="textMultiLine|textCapSentences"
             android:padding="16dp"
             android:textColor="@color/black"
@@ -257,13 +256,110 @@
             android:layout_height="60dp"
             android:layout_marginTop="24dp"
             android:backgroundTint="@color/orange"
-            android:text="Log My Mood"
+            android:text="@string/log_my_mood"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/noteContainer" />
+
+        <!-- Filter Section -->
+        <TextView
+            android:id="@+id/filterLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="Filter Entries"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/saveLogBTN" />
+
+        <!-- Filter Dropdowns Container -->
+        <LinearLayout
+            android:id="@+id/filterDropdownsContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/filterLabel">
+
+            <!-- Day Filter Dropdown -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time Period"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="6dp" />
+
+                <Spinner
+                    android:id="@+id/dayFilterSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/round_space_with_border"
+                    android:elevation="2dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp" />
+
+            </LinearLayout>
+
+            <!-- Mood Type Filter Dropdown -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mood Type"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="6dp" />
+
+                <Spinner
+                    android:id="@+id/moodTypeSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/round_space_with_border"
+                    android:elevation="2dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Clear Filter Button -->
+<!--        <Button-->
+<!--            android:id="@+id/clearFilterBtn"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:background="@drawable/round_box_with_border"-->
+<!--            android:text="Clear Filters"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="14sp"-->
+<!--            android:elevation="2dp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/filterDropdownsContainer" />-->
 
         <!-- Recent Entries Label -->
         <TextView
@@ -276,19 +372,19 @@
             android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/saveLogBTN" />
+            app:layout_constraintTop_toBottomOf="@+id/filterDropdownsContainer" />
 
         <!-- Recent Entries RecyclerView (placeholder for now) -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recentEntriesRecyclerView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="5dp"
             android:nestedScrollingEnabled="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/recentEntriesLabel" />
+            app:layout_constraintTop_toBottomOf="@+id/recentEntriesLabel" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

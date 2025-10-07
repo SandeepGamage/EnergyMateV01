@@ -14,55 +14,99 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/colorOnPrimary" />
+        android:background="@color/light_orange" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/light_orange"
-        android:backgroundTint="@color/colorOnPrimary"
-        android:orientation="horizontal"
-        android:paddingTop="10dp"
-        android:paddingBottom="20dp">
+        android:backgroundTint="@color/light_orange"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/homeIcon"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_weight="1"
             android:contentDescription="Home"
-            android:padding="8dp"
+            android:padding="2dp"
             app:srcCompat="@drawable/baseline_home_24"
             app:tint="@android:color/darker_gray" />
 
         <ImageView
             android:id="@+id/moodIcon"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_weight="1"
             android:contentDescription="Mood Journal"
-            android:padding="8dp"
+            android:padding="2dp"
             app:srcCompat="@drawable/baseline_emoji_emotions_24"
             app:tint="@android:color/darker_gray" />
 
         <ImageView
             android:id="@+id/waterDropIcon"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_weight="1"
             android:contentDescription="Hydration"
-            android:padding="8dp"
+            android:padding="2dp"
             app:srcCompat="@drawable/baseline_water_drop_24"
             app:tint="@android:color/darker_gray" />
 
         <ImageView
             android:id="@+id/profileIcon"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_weight="1"
             android:contentDescription="Profile"
-            android:padding="8dp"
+            android:padding="2dp"
             app:srcCompat="@drawable/baseline_person_24"
             app:tint="@android:color/darker_gray" />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_orange"
+        android:backgroundTint="@color/light_orange"
+        android:orientation="horizontal"
+        android:paddingBottom="14dp">
+
+        <TextView
+            android:id="@+id/homeText"
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/koho_semibold"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/moodText"
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/koho_semibold"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/waterDropText"
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/koho_semibold"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/profileText"
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/koho_semibold"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="17sp" />
+    </LinearLayout>
+
 </LinearLayout>

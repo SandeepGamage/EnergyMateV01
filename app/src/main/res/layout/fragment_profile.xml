@@ -13,6 +13,7 @@
         android:padding="24dp">
 
         <!-- Profile Section -->
+
         <TextView
             android:id="@+id/profileTitle"
             android:layout_width="wrap_content"
@@ -105,9 +106,10 @@
                     app:tint="@color/orange" />
 
                 <TextView
+                    android:id="@+id/profileActiveHabitsCount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1"
+                    android:text="0"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -142,9 +144,10 @@
                     app:tint="@color/habit_completed" />
 
                 <TextView
+                    android:id="@+id/profileMoodEntriesCount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1"
+                    android:text="0"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -153,7 +156,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="5dp"
-                    android:text="Mood Entries"
+                    android:text="Today's Moods"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -179,6 +182,7 @@
                     app:tint="@color/habit_pending" />
 
                 <TextView
+                    android:id="@+id/profileTodaysProgress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0%"
@@ -213,13 +217,13 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/baseline_local_fire_department_24"
-                    app:tint="@color/red" />
+                    android:src="@drawable/water_drop_icon" />
 
                 <TextView
+                    android:id="@+id/profileWaterIntake"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="7"
+                    android:text="0"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -227,7 +231,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Day Streak"
+                    android:text="Water Glasses"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -235,30 +239,190 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Home Widget Preview Section -->
+
+        <!-- Settings Section -->
         <TextView
-            android:id="@+id/widgetPreviewTitle"
+            android:id="@+id/settingsTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="50dp"
             android:fontFamily="@font/koho_bold"
-            android:text="Home Screen Widget Preview"
+            android:text="Settings"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/statsGrid" />
+            app:layout_constraintTop_toBottomOf="@+id/statsGrid" />
 
-        <TextView
-            android:id="@+id/widgetPreviewNote"
-            android:layout_width="wrap_content"
+        <!-- Settings Options (List style) -->
+        <LinearLayout
+            android:id="@+id/settingsOptions"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:layout_marginTop="18dp"
-            android:fontFamily="@font/koho"
-            android:text="Widget preview coming soon..."
-            android:textColor="@color/black"
-            android:textSize="17sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/widgetPreviewTitle" />
+            app:layout_constraintTop_toBottomOf="@id/settingsTitle"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <!-- Notification Settings Row -->
+            <RelativeLayout
+                android:id="@+id/editProfileBTN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_box"
+                android:padding="10dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/clearArrow5"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/baseline_arrow_forward_ios_24"
+                    app:tint="@color/orange" />
+
+                <ImageView
+                    android:id="@+id/EditProfileImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_mode_edit_24"
+                    android:layout_alignParentStart="true"
+                    android:buttonTint="@color/orange" />
+
+                <TextView
+                    android:id="@+id/notificationText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/EditProfileImage"
+                    android:fontFamily="@font/koho_semibold"
+                    android:text="Edit Profile"
+                    android:textColor="@color/hm_orange"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <!-- Export Data Row -->
+            <RelativeLayout
+                android:id="@+id/changePasswordBTN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_box"
+                android:padding="10dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/clearArrow6"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/baseline_arrow_forward_ios_24"
+                    app:tint="@color/orange" />
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/baseline_password_24" />
+
+                <TextView
+                    android:id="@+id/exportDataText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/imageView9"
+                    android:fontFamily="@font/koho_semibold"
+                    android:text="Change Password"
+                    android:textColor="@color/hm_orange"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <!-- Privacy Policy Row -->
+            <RelativeLayout
+                android:id="@+id/privacyPolicyBTN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_box"
+                android:padding="10dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/clearArrow7"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/baseline_arrow_forward_ios_24"
+                    app:tint="@color/orange" />
+
+                <ImageView
+                    android:id="@+id/privacyPolicyImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:buttonTint="@color/orange"
+                    android:src="@drawable/baseline_privacy_tip_24"/>
+
+                <TextView
+                    android:id="@+id/privacyPolicyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/privacyPolicyImage"
+                    android:fontFamily="@font/koho_semibold"
+                    android:text="Privacy Policy"
+                    android:textColor="@color/hm_orange"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <!-- Help & Support Row -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_box"
+                android:padding="10dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/clearArrow8"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/baseline_arrow_forward_ios_24"
+                    app:tint="@color/orange" />
+
+                <ImageView
+                    android:id="@+id/helpSupportImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:buttonTint="@color/orange"
+                    android:src="@drawable/baseline_help_24"/>
+
+                <TextView
+                    android:id="@+id/helpSupportText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/helpSupportImage"
+                    android:fontFamily="@font/koho_semibold"
+                    android:text="Help and Support"
+                    android:textColor="@color/hm_orange"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+        </LinearLayout>
 
         <!-- Data Management Section -->
         <TextView
@@ -272,7 +436,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/widgetPreviewNote" />
+            app:layout_constraintTop_toBottomOf="@id/settingsOptions" />
 
         <!-- Data Management Buttons (List style) -->
         <LinearLayout

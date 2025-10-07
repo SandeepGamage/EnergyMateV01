@@ -8,6 +8,52 @@
     android:background="@color/light_orange"
     tools:context=".onboarding_screen02">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="490dp"
+        android:layout_height="444dp"
+        android:layout_marginTop="42dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/onboarding_screen02" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginEnd="90dp"
+        android:fontFamily="@font/koho_semibold"
+        android:text="@string/powerful_features"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="402dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/koho"
+        android:text="@string/eneergymate_is"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <Button
         android:id="@+id/nextBTN"
         android:layout_width="380dp"
@@ -22,15 +68,35 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="170dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="139dp"
-        android:layout_marginEnd="139dp"
-        android:layout_marginBottom="92dp"
-        app:layout_constraintBottom_toTopOf="@+id/nextBTN"
+    <LinearLayout
+        android:id="@+id/progressIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="800dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/selected2" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginHorizontal="4dp"
+            android:alpha="0.5"
+            android:background="@drawable/dot_inactive" />
+
+        <View
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginHorizontal="4dp"
+            android:background="@drawable/dot_active" />
+
+        <View
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginHorizontal="4dp"
+            android:alpha="0.5"
+            android:background="@drawable/dot_inactive" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
